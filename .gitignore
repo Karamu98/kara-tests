@@ -34,3 +34,5 @@
 # Extra
 .vs/
 bin/
+*.sln
+*.vcxproj
