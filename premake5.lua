@@ -48,3 +48,34 @@ project "VectorTest"
 		defines {"NDEBUG"}
 		runtime "Release"
 		optimize "on"
+
+-- ==============================================
+
+project "ArrayTest"
+	kind "ConsoleApp"
+	language "C++"
+	location "ArrayTest"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin/" .. outputdir .. "/obj/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp" 
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		defines {"DEBUG"}
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines {"NDEBUG"}
+		runtime "Release"
+		optimize "on"
+
+-- ==============================================
